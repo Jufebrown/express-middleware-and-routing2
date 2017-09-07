@@ -13,7 +13,9 @@ app.get('/see-our-chickens', (req, res, next) => {
   res.sendFile(path.join(__dirname + '/public' + '/see-our-chickens.html'));
 })
 
-
+app.get('/see-our-eggs', (req, res, next) => {
+  res.sendFile(path.join(__dirname + '/public' + '/see-our-eggs.html'));
+})
 
 app.use((req, res) => {
   res.send("Where do you think you're going?")
