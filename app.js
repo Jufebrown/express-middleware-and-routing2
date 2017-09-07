@@ -20,11 +20,6 @@ const checkForEgg = (req, res) => {
 app.use('/api/v1/', routes)
 
 //routes and routing
-app.get('/', (req, res, next) => {
-  checkForEgg(req, res)
-  res.sendFile(path.join(__dirname + '/index.html'));
-})
-
 app.get('/see-our-chickens', (req, res, next) => {
   checkForEgg(req, res)
   res.sendFile(path.join(__dirname + '/public' + '/see-our-chickens.html'));
