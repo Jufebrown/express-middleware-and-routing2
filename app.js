@@ -2,14 +2,18 @@
 
 const express = require('express')
 const app = express()
-
-//routes modules
-const routes = require(`./routes/`)
+const path = require('path')
 
 //routes and routing
-app.use(express.static(__dirname + '/public'))
+app.get('/', (req, res, next) => {
+   res.sendFile(path.join(__dirname + '/index.html'));
+})
 
-app.use(routes)
+app.get('/see-our-chickens', (req, res, next) => {
+  res.sendFile(path.join(__dirname + '/public' + '/see-our-chickens.html'));
+})
+
+
 
 app.use((req, res) => {
   res.send("Where do you think you're going?")
