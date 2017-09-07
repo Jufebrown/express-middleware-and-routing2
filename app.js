@@ -2,7 +2,6 @@
 
 const express = require('express')
 const app = express()
-const path = require('path')
 
 const routes = require('./routes/')
 
@@ -20,16 +19,6 @@ const checkForEgg = (req, res) => {
 app.use('/api/v1/', routes)
 
 //routes and routing
-app.get('/see-our-chickens', (req, res, next) => {
-  checkForEgg(req, res)
-  res.sendFile(path.join(__dirname + '/public' + '/see-our-chickens.html'));
-})
-
-app.get('/see-our-eggs', (req, res, next) => {
-  checkForEgg(req, res)
-  res.sendFile(path.join(__dirname + '/public' + '/see-our-eggs.html'));
-})
-
 app.use((req, res) => {
   res.send('<img src="https://http.cat/404.jpg">')
 })
